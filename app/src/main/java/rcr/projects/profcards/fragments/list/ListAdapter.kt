@@ -17,10 +17,11 @@ class ListAdapter(): RecyclerView.Adapter<ListAdapter.ViewHolder>() {
         with(holder){
             with(cartoesList[position]){
                 binding.tvId.text = this.id.toString()
-                binding.tvTitulo.text = this.titulo
-                binding.tvDescricao.text = "Profissão: ${this.mensagem}"
-                binding.tvData.text = "Nascimento: ${this.data}"
-                binding.tvStatus.text = "Situação: ${this.status}"
+                binding.tvNome.text = this.nome
+                binding.tvEmpresa.text = this.empresa
+                binding.tvProfissao.text = this.profissao
+                binding.tvTelefone.text = this.telefone
+                binding.tvEmail.text = this.email
                 binding.rowLayout.setOnClickListener {
                     val action = ListFragmentDirections.actionListFragmentToUpdateFragment(this)
                     holder.itemView.findNavController().navigate(action)

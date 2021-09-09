@@ -36,17 +36,17 @@
         app:layout_constraintGuide_end="8dp" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_titulo"
+        android:id="@+id/til_nome"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="Nome"
+        android:hint="@string/txt_label_nome"
         app:layout_constraintEnd_toEndOf="@id/guide_end"
         app:layout_constraintStart_toStartOf="@id/guide_start"
         app:layout_constraintTop_toBottomOf="@id/guide_top">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etuTitulo"
+            android:id="@+id/etuNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed-light"
@@ -54,17 +54,17 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_descricao"
+        android:id="@+id/til_empresa"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="Profissão"
+        android:hint="@string/txt_label_empresa"
         app:layout_constraintEnd_toEndOf="@id/guide_end"
         app:layout_constraintStart_toStartOf="@id/guide_start"
-        app:layout_constraintTop_toBottomOf="@id/til_titulo">
+        app:layout_constraintTop_toBottomOf="@id/til_nome">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etuDescricao"
+            android:id="@+id/etuEmpresa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed-light"
@@ -72,17 +72,17 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_data"
+        android:id="@+id/til_profissao"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="Data"
+        android:hint="@string/txt_label_profissao"
         app:layout_constraintEnd_toEndOf="@id/guide_end"
         app:layout_constraintStart_toStartOf="@id/guide_start"
-        app:layout_constraintTop_toBottomOf="@id/til_descricao">
+        app:layout_constraintTop_toBottomOf="@id/til_empresa">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etuData"
+            android:id="@+id/etuProfissao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed-light"
@@ -90,17 +90,17 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_status"
+        android:id="@+id/til_telefone"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="Status"
+        android:hint="@string/txt_label_telefone"
         app:layout_constraintEnd_toEndOf="@id/guide_end"
         app:layout_constraintStart_toStartOf="@id/guide_start"
-        app:layout_constraintTop_toBottomOf="@id/til_data">
+        app:layout_constraintTop_toBottomOf="@id/til_profissao">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etuStatus"
+            android:id="@+id/etuTelefone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed-light"
@@ -108,17 +108,17 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_dono"
+        android:id="@+id/til_email"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="Criado por"
+        android:hint="@string/txt_label_email"
         app:layout_constraintEnd_toEndOf="@id/guide_end"
         app:layout_constraintStart_toStartOf="@id/guide_start"
-        app:layout_constraintTop_toBottomOf="@id/til_status">
+        app:layout_constraintTop_toBottomOf="@id/til_telefone">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etuDono"
+            android:id="@+id/etuEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed-light"

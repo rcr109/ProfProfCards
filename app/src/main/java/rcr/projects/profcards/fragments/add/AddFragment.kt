@@ -21,31 +21,33 @@ class AddFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentAddBinding.inflate(inflater)
-
         mCartaoViewModel = ViewModelProvider(this).get(CartaoViewModel::class.java)
-
         binding.btCheck.setOnClickListener {
-
             saveDataToDatabase()
-
         }
-
         return binding.root
     }
 
-    private fun checkData(titulo : String, descricao : String, data : String, status : String, dono : String): Boolean {
-        val verifica = (!titulo.isEmpty() && !descricao.isEmpty() && !data.isEmpty() and !status.isEmpty() and !dono.isEmpty())
+    private fun checkData(
+        nome: String,
+        empresa: String,
+        profissao: String,
+        telefone: String,
+        email: String,
+    ): Boolean {
+        val verifica = (!nome.isEmpty() && !empresa.isEmpty() && !profissao.isEmpty() && !telefone.isEmpty() and !email.isEmpty())
         return verifica
     }
 
     private fun saveDataToDatabase() {
-        val titulo = binding.etTitulo.text.toString()
-        val descricao = binding.etDescricao.text.toString()
-        val data = binding.etData.text.toString()
-        val status = binding.etStatus.text.toString()
-        val dono = binding.etDono.text.toString()
-        if (checkData(titulo, descricao, data, status, dono)){
-            val cartao = Cartao(0,titulo, descricao, data, status, dono)
+        val nome = binding.etNome.text.toString()
+        val empresa = binding.etEmpresa.text.toString()
+        val profissao = binding.etProfissao.text.toString()
+        val telefone = binding.etTelefone.text.toString()
+        val email = binding.etEmail.text.toString()
+
+        if (checkData(nome, empresa, profissao, telefone, email)){
+            val cartao = Cartao(0,nome, empresa, profissao, telefone, email)
             mCartaoViewModel.addCartao(cartao)
             Toast.makeText(requireContext(), "Incluído com sucesso", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_addFragment_to_listFragment)

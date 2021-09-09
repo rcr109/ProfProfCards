@@ -8,4 +8,9 @@
     <string name="txt_descr_inserir">Botão para inserir novo cartão</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="txt_share">Compartilhar</string>
+    <string name="txt_label_nome">Nome</string>
+    <string name="txt_label_empresa">Nome da empresa</string>
+    <string name="txt_label_telefone">Telefone</string>
+    <string name="txt_label_email">E-mail</string>
+    <string name="txt_label_profissao">Profissão</string>
 </resources>

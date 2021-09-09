@@ -25,11 +25,11 @@ class UpdateFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentUpdateBinding.inflate(inflater)
-        binding.etuTitulo.setText(args.currentCartao.titulo)
-        binding.etuDescricao.setText(args.currentCartao.mensagem)
-        binding.etuData.setText(args.currentCartao.data)
-        binding.etuStatus.setText(args.currentCartao.status)
-        binding.etuDono.setText(args.currentCartao.dono)
+        binding.etuNome.setText(args.currentCartao.nome)
+        binding.etuEmpresa.setText(args.currentCartao.empresa)
+        binding.etuProfissao.setText(args.currentCartao.profissao)
+        binding.etuTelefone.setText(args.currentCartao.telefone)
+        binding.etuEmail.setText(args.currentCartao.email)
         binding.btuCheck.setOnClickListener {
             updateItem()
         }
@@ -41,13 +41,13 @@ class UpdateFragment : Fragment() {
     }
 
     private fun updateItem() {
-        val titulo = binding.etuTitulo.text.toString()
-        val mensagem = binding.etuDescricao.text.toString()
-        val data = binding.etuData.text.toString()
-        val status = binding.etuStatus.text.toString()
-        val dono = binding.etuDono.text.toString()
-        if (checkData(titulo, mensagem, data, status, dono)){
-            val cartaoNovo = Cartao(args.currentCartao.id, titulo, mensagem, data, status, dono)
+        val nome = binding.etuNome.text.toString()
+        val empresa = binding.etuEmpresa.text.toString()
+        val profissao = binding.etuProfissao.text.toString()
+        val telefone = binding.etuTelefone.text.toString()
+        val email = binding.etuEmail.text.toString()
+        if (checkData(nome, empresa, profissao, telefone, email)){
+            val cartaoNovo = Cartao(args.currentCartao.id, nome, empresa, profissao, telefone, email)
             mCartaoViewModel.updateCartao(cartaoNovo)
             Toast.makeText(requireContext(), "Atualizado com sucesso", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_updateFragment_to_listFragment)
@@ -56,8 +56,8 @@ class UpdateFragment : Fragment() {
         }
     }
 
-    private fun checkData(titulo : String, descricao : String, data : String, status : String, dono : String): Boolean {
-        val verifica = (!titulo.isEmpty() && !descricao.isEmpty() && !data.isEmpty() and !status.isEmpty() and !dono.isEmpty())
+    private fun checkData(nome : String, empresa: String, profissao : String, telefone : String, email : String): Boolean {
+        val verifica = (!nome.isEmpty() && !empresa.isEmpty() && !profissao.isEmpty() and !telefone.isEmpty() and !email.isEmpty())
         return verifica
     }
 
@@ -77,15 +77,15 @@ class UpdateFragment : Fragment() {
 
         builder.setPositiveButton("Sim") { _, _ ->
             mCartaoViewModel.deleteCartao(args.currentCartao)
-            Toast.makeText(requireContext(), "${args.currentCartao.titulo} excluído", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "${args.currentCartao.nome} excluído", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_updateFragment_to_listFragment)
         }
         builder.setNegativeButton("Não"){ _, _ ->
 
         }
 
-        builder.setTitle("Excluir ${args.currentCartao.titulo}?")
-        builder.setMessage("Tem certeza que deseja excluir ${args.currentCartao.titulo}?")
+        builder.setTitle("Excluir ${args.currentCartao.nome}?")
+        builder.setMessage("Tem certeza que deseja excluir ${args.currentCartao.nome}?")
         builder.create().show()
     }
 

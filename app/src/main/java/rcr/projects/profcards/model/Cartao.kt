@@ -10,9 +10,9 @@ import kotlinx.parcelize.Parcelize
 data class Cartao (
     @PrimaryKey(autoGenerate = true)
     val id: Int,
-    val titulo: String,
-    val mensagem: String,
-    val data: String,
-    val status: String,
-    val dono: String
+    val nome: String,
+    val empresa: String,
+    val profissao: String,
+    val telefone: String,
+    val email: String,
 ) : Parcelable

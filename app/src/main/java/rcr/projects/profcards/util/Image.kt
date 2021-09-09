@@ -54,7 +54,6 @@ companion object{
                     bitmap.compress(Bitmap.CompressFormat.JPEG, 100, it)
                     Toast.makeText(context, "imagem capturada com sucesso", Toast.LENGTH_SHORT).show()
                 }
-
             }
         }
         else {

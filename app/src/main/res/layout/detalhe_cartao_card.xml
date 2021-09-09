@@ -13,7 +13,7 @@
         android:checkable="true"
         android:clickable="true"
         android:focusable="true"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="8dp"
         android:elevation="24dp"
         android:layout_margin="4dp"
         android:clipToPadding="false"
@@ -64,56 +64,77 @@
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:textColor="@color/red"
-                android:text="01"/>
+                android:visibility="gone"
+                android:text=""/>
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_titulo"
-                android:layout_width="wrap_content"
+                android:id="@+id/tv_nome"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toEndOf="@id/tv_id"
+                app:layout_constraintEnd_toEndOf="@id/guide_end"
                 app:layout_constraintTop_toBottomOf="@id/tv_id"
+                android:gravity="center_horizontal"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:text="Título"/>
+                android:text="@string/txt_label_nome"/>
+
+
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_descricao"
-                android:layout_width="wrap_content"
+                android:id="@+id/tv_profissao"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="@id/tv_titulo"
-                app:layout_constraintTop_toBottomOf="@id/tv_titulo"
-                android:text="Descrição"/>
+                android:gravity="center_horizontal"
+                app:layout_constraintStart_toStartOf="@id/tv_empresa"
+                app:layout_constraintTop_toBottomOf="@id/tv_nome"
+                app:layout_constraintEnd_toEndOf="@id/guide_end"
+                android:text="@string/txt_label_profissao"/>
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_data"
-                android:layout_width="wrap_content"
+                android:id="@+id/tv_empresa"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="@id/tv_descricao"
-                app:layout_constraintTop_toBottomOf="@id/tv_descricao"
-                android:text="Data"/>
+                android:gravity="center_horizontal"
+                app:layout_constraintEnd_toEndOf="@id/guide_end"
+                app:layout_constraintStart_toStartOf="@id/tv_nome"
+                app:layout_constraintTop_toBottomOf="@id/tv_profissao"
+                android:text="@string/txt_label_empresa"
+                android:textStyle="bold"/>
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_status"
+                android:id="@+id/tv_telefone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="@id/tv_data"
-                app:layout_constraintTop_toBottomOf="@id/tv_data"
-                app:layout_constraintBottom_toBottomOf="@id/guide_bottom"
-                android:text="Status"/>
+                app:layout_constraintStart_toStartOf="@id/guide_start"
+                app:layout_constraintTop_toBottomOf="@id/tv_empresa"
+                app:layout_constraintEnd_toStartOf="@id/tv_email"
+                android:text="@string/txt_label_telefone"/>
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/tv_telefone"
+                app:layout_constraintTop_toTopOf="@id/tv_telefone"
+                app:layout_constraintEnd_toEndOf="@id/guide_end"
+                android:text="@string/txt_label_email"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/fb_share"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_share_white"
-                app:backgroundTint="@color/white"
-                android:elevation="8dp"
-                android:backgroundTint="@color/white"
-                app:fabSize="mini"
-                app:layout_constraintBottom_toBottomOf="@id/guide_bottom"
-                app:layout_constraintEnd_toEndOf="@id/guide_end" />
+                android:src="@drawable/ic_share"
+                android:tint="@color/black"
+
+                app:layout_constraintTop_toBottomOf="@id/tv_telefone"
+                app:layout_constraintEnd_toEndOf="@id/guide_end"
+                app:layout_constraintBottom_toBottomOf="@id/guide_bottom"/>
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
