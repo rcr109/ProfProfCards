@@ -1,7 +1,7 @@
 # ProfProfCards
 Projeto para gestão de cartões de visitas
 
-Este projeto foi desenvolvido como avalliação parcial do bootcampo Banco Inter promovido pela Digital Inovation One. Foram utilizadas, dentre outras, as seguintes tecnologias:
+Este projeto foi desenvolvido como avalliação parcial do bootcamp Banco Inter promovido pela Digital Inovation One. Foram utilizadas, dentre outras, as seguintes tecnologias:
 - RecyclerView
 - Room database
 - Fragments
