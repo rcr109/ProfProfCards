@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="4dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/rowLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="16dp"
+        android:elevation="24dp"
+        android:layout_margin="4dp"
+        android:clipToPadding="false"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="8dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="8dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="8dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="8dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/guide_start"
+                app:layout_constraintTop_toTopOf="@id/guide_top"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/red"
+                android:text="01"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_titulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/tv_id"
+                app:layout_constraintTop_toBottomOf="@id/tv_id"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="Título"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_descricao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/tv_titulo"
+                app:layout_constraintTop_toBottomOf="@id/tv_titulo"
+                android:text="Descrição"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/tv_descricao"
+                app:layout_constraintTop_toBottomOf="@id/tv_descricao"
+                android:text="Data"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/tv_data"
+                app:layout_constraintTop_toBottomOf="@id/tv_data"
+                app:layout_constraintBottom_toBottomOf="@id/guide_bottom"
+                android:text="Status"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fb_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_share_white"
+                app:backgroundTint="@color/white"
+                android:elevation="8dp"
+                android:backgroundTint="@color/white"
+                app:fabSize="mini"
+                app:layout_constraintBottom_toBottomOf="@id/guide_bottom"
+                app:layout_constraintEnd_toEndOf="@id/guide_end" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -80,12 +80,12 @@ class UpdateFragment : Fragment() {
             Toast.makeText(requireContext(), "${args.currentCartao.titulo} excluído", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_updateFragment_to_listFragment)
         }
-        builder.setNegativeButton("No"){ _, _ ->
+        builder.setNegativeButton("Não"){ _, _ ->
 
         }
 
-        builder.setTitle("Delete ${args.currentCartao.titulo}?")
-        builder.setMessage("Tem certeza que deseja exlcuir ${args.currentCartao.titulo}?")
+        builder.setTitle("Excluir ${args.currentCartao.titulo}?")
+        builder.setMessage("Tem certeza que deseja excluir ${args.currentCartao.titulo}?")
         builder.create().show()
     }
 

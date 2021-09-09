@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grey3"
     tools:context=".fragments.list.ListFragment">
 
     <androidx.constraintlayout.widget.Guideline
@@ -47,12 +48,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
+        android:contentDescription="@string/txt_descr_inserir"
         android:focusable="true"
-        android:tint="@android:color/white"
         android:src="@drawable/ic_button_add"
+        app:backgroundTint="@color/purple_500"
+        app:fabSize="normal"
         app:layout_constraintBottom_toBottomOf="@id/guide_bottom"
         app:layout_constraintEnd_toEndOf="@id/guide_end"
-        android:contentDescription="@string/txt_descr_inserir" />
+        app:tint="@android:color/white" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/grey3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.update.UpdateFragment">
@@ -34,75 +35,105 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_end="8dp" />
 
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/etuTitulo"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_titulo"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:inputType="text"
-        android:hint="@string/txt_titulo"
+        android:layout_marginTop="16dp"
+        android:hint="Nome"
         app:layout_constraintEnd_toEndOf="@id/guide_end"
         app:layout_constraintStart_toStartOf="@id/guide_start"
-        app:layout_constraintTop_toTopOf="@id/guide_top"
-        />
+        app:layout_constraintTop_toBottomOf="@id/guide_top">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etuTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-light"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/etuDescricao"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_descricao"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:inputType="text"
-        android:hint="@string/txt_descricao"
+        android:layout_marginTop="16dp"
+        android:hint="Profissão"
         app:layout_constraintEnd_toEndOf="@id/guide_end"
         app:layout_constraintStart_toStartOf="@id/guide_start"
-        app:layout_constraintTop_toBottomOf="@+id/etuTitulo" />
+        app:layout_constraintTop_toBottomOf="@id/til_titulo">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etuDescricao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-light"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/etuData"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_data"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:hint="@string/txt_data"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:inputType="text"
+        android:layout_marginTop="16dp"
+        android:hint="Data"
         app:layout_constraintEnd_toEndOf="@id/guide_end"
         app:layout_constraintStart_toStartOf="@id/guide_start"
-        app:layout_constraintTop_toBottomOf="@+id/etuDescricao" />
+        app:layout_constraintTop_toBottomOf="@id/til_descricao">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etuData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-light"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/etuStatus"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_status"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:hint="@string/txt_status"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:inputType="text"
+        android:layout_marginTop="16dp"
+        android:hint="Status"
         app:layout_constraintEnd_toEndOf="@id/guide_end"
         app:layout_constraintStart_toStartOf="@id/guide_start"
-        app:layout_constraintTop_toBottomOf="@+id/etuData" />
+        app:layout_constraintTop_toBottomOf="@id/til_data">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etuStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-light"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/etuDono"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_dono"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:inputType="text"
-        android:hint="@string/txt_dono"
+        android:layout_marginTop="16dp"
+        android:hint="Criado por"
         app:layout_constraintEnd_toEndOf="@id/guide_end"
         app:layout_constraintStart_toStartOf="@id/guide_start"
-        app:layout_constraintTop_toBottomOf="@+id/etuStatus" />
+        app:layout_constraintTop_toBottomOf="@id/til_status">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etuDono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-light"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btu_check"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:backgroundTint="@color/purple_500"
+        app:tint="@color/white"
         app:layout_constraintEnd_toEndOf="@id/guide_end"
         app:layout_constraintBottom_toBottomOf="@id/guide_bottom"
-        android:src="@drawable/ic_button_check"
-        android:tint="@color/white"/>
+        android:src="@drawable/ic_button_check"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

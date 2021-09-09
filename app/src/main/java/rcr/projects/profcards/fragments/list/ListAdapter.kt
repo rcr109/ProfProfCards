@@ -1,18 +1,16 @@
 package rcr.projects.profcards.fragments.list
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import rcr.projects.profcards.databinding.DetalheCartaoCardBinding
 import rcr.projects.profcards.model.Cartao
-import rcr.projects.profcards.databinding.DetalheCartaoBinding
-import rcr.projects.profcards.viewmodel.CartaoViewModel
 
-class ListAdapter: RecyclerView.Adapter<ListAdapter.ViewHolder>() {
-
-    inner class ViewHolder(val binding: DetalheCartaoBinding) : RecyclerView.ViewHolder(binding.root)
-
+class ListAdapter(): RecyclerView.Adapter<ListAdapter.ViewHolder>() {
+    var listenerShare : (View) -> Unit = {}
+    inner class ViewHolder(val binding: DetalheCartaoCardBinding) : RecyclerView.ViewHolder(binding.root)
     private var cartoesList = emptyList<Cartao>()
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -20,20 +18,22 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.ViewHolder>() {
             with(cartoesList[position]){
                 binding.tvId.text = this.id.toString()
                 binding.tvTitulo.text = this.titulo
-                binding.tvDescricao.text = this.mensagem
-                binding.tvData.text = this.data
-                binding.tvStatus.text = this.status
+                binding.tvDescricao.text = "Profissão: ${this.mensagem}"
+                binding.tvData.text = "Nascimento: ${this.data}"
+                binding.tvStatus.text = "Situação: ${this.status}"
                 binding.rowLayout.setOnClickListener {
                     val action = ListFragmentDirections.actionListFragmentToUpdateFragment(this)
                     holder.itemView.findNavController().navigate(action)
+                }
+                binding.fbShare.setOnClickListener {
+                    listenerShare(binding.rowLayout)
                 }
             }
         }
     }
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = DetalheCartaoBinding
+        val binding = DetalheCartaoCardBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
